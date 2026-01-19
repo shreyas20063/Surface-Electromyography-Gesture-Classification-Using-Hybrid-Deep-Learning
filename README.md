@@ -31,7 +31,7 @@ This repository presents a surface electromyography (sEMG)–based hand gesture 
 ## Repository Structure
 
 ```
-v11_final/
+Hybrid-Deep-Learning-for-sEMG-Based-Hand-Gesture-Classification/
 |-- README.md                 # Project documentation
 |-- train.py                  # Training script with 5-fold CV
 |-- inference.py              # Inference script for predictions
