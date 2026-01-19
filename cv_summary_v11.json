@@ -1,0 +1,30 @@
+{
+    "version": "V11_CORRECTED",
+    "n_folds": 5,
+    "n_params": 45781,
+    "architecture": "V9 Core (proven) + 5 surgical tweaks",
+    "tweaks": [
+        "Enhanced augmentation for hard classes (G1, G2, G3)",
+        "Aggressive class weighting (1.8\u00c3\u2014 G1, 1.2\u00c3\u2014 G2, 1.4\u00c3\u2014 G3)",
+        "Better loss weights",
+        "Slightly lower LR (0.0008) for stability",
+        "More patience (35 vs 25) for convergence"
+    ],
+    "mean_acc": 74.28571428571429,
+    "std_acc": 3.1529419728089225,
+    "ensemble_acc": 74.28571428571429,
+    "per_class_mean": [
+        64.57142857142858,
+        72.57142857142858,
+        68.95238095238095,
+        71.42857142857143,
+        93.9047619047619
+    ],
+    "per_class_std": [
+        11.323324912534744,
+        8.921934040861235,
+        14.52622930661914,
+        5.962847939999442,
+        4.368512358544652
+    ]
+}

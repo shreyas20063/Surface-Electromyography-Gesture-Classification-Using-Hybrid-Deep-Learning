@@ -1,0 +1,24 @@
+# SYNAPSE 2026 - sEMG Gesture Classification
+# Python Dependencies
+
+# Core ML Framework
+torch>=1.9.0
+torchvision>=0.10.0
+
+# Numerical Computing
+numpy>=1.19.0
+scipy>=1.6.0
+
+# Data Processing
+pandas>=1.2.0
+scikit-learn>=0.24.0
+
+# Visualization
+matplotlib>=3.3.0
+seaborn>=0.11.0
+
+# Progress Bars
+tqdm>=4.60.0
+
+# Optional: CUDA support (install separately based on your CUDA version)
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
