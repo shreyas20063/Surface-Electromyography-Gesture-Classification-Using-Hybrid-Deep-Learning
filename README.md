@@ -46,9 +46,7 @@ Hybrid-Deep-Learning-for-sEMG-Based-Hand-Gesture-Classification/
 |   |-- scaler_feat_fold1.pkl
 |   |-- (... for all 5 folds)
 |
-|-- report/
-    |-- report.tex            # LaTeX technical report
-    |-- report.pdf            # Compiled report
+|-- report.pdf            # Compiled report
 ```
 
 ## Quick Start
