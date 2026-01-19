@@ -1,32 +1,27 @@
-
 # Hybrid Deep Learning for sEMG-Based Hand Gesture Classification
-
----
 
 ## Overview
 
-This repository presents a surface electromyography (sEMG)–based hand gesture classification system using hybrid deep learning. The proposed model classifies **5 distinct hand gestures** from **8-channel EMG signals** sampled at **1000 Hz**, combining convolutional, recurrent, and hand-crafted feature–based representations.
+This repository presents a surface electromyography (sEMG)–based hand gesture classification system using hybrid deep learning. The proposed model classifies 5 distinct hand gestures from 8-channel EMG signals sampled at 1000 Hz, combining convolutional, recurrent, and hand-crafted feature–based representations.
 
-**Authors**
+## Authors
 
-* Duggimpudi Shreyas Reddy
-* Rajat Gupta
-* Sudhakar S. Dalwayi
+- Duggimpudi Shreyas Reddy
+- Rajat Gupta
+- Sudhakar S. Dalwayi
 
-### Key Results
+## Key Results
 
-* **Overall Accuracy**: 74.29% ± 3.15%
-* **Model Parameters**: 45,781 (lightweight)
-* **Validation**: 5-Fold Subject-Grouped Cross-Validation
-* **Per-Class Accuracy**:
+- **Overall Accuracy**: 74.29% ± 3.15%
+- **Model Parameters**: 45,781 (lightweight)
+- **Validation**: 5-Fold Subject-Grouped Cross-Validation
 
-  * G0: 64.57% ± 11.32%
-  * G1: 72.57% ± 8.92%
-  * G2: 68.95% ± 14.53%
-  * G3: 71.43% ± 5.96%
-  * G4: 93.90% ± 4.37%
-
----
+### Per-Class Accuracy:
+- G0: 64.57% ± 11.32%
+- G1: 72.57% ± 8.92%
+- G2: 68.95% ± 14.53%
+- G3: 71.43% ± 5.96%
+- G4: 93.90% ± 4.37%
 
 ## Repository Structure
 
@@ -56,8 +51,6 @@ Hybrid-Deep-Learning-for-sEMG-Based-Hand-Gesture-Classification/
     |-- report.pdf            # Compiled report
 ```
 
----
-
 ## Quick Start
 
 ### 1. Installation
@@ -78,11 +71,10 @@ python train.py
 ```
 
 This performs 5-fold cross-validation and saves:
-
-* Model checkpoints
-* Preprocessing scalers
-* Performance visualizations
-* Summary metrics
+- Model checkpoints
+- Preprocessing scalers
+- Performance visualizations
+- Summary metrics
 
 ### 3. Inference
 
@@ -96,8 +88,6 @@ python inference.py --input path/to/data_folder/ --output predictions.csv
 # Specify a fold model
 python inference.py --input sample.csv --fold 1
 ```
-
----
 
 ## Model Architecture
 
@@ -126,94 +116,78 @@ Fusion:
 
 ### Key Components
 
-1. Channel-wise attention for adaptive sensor weighting
-2. Multi-scale temporal convolutions
-3. Bidirectional GRU for sequence modeling
-4. Temporal attention for discriminative segment focus
-5. Fusion of learned and hand-crafted features
-
----
+- Channel-wise attention for adaptive sensor weighting
+- Multi-scale temporal convolutions
+- Bidirectional GRU for sequence modeling
+- Temporal attention for discriminative segment focus
+- Fusion of learned and hand-crafted features
 
 ## Feature Engineering
 
 ### 144 Hand-Crafted Features (18 per channel × 8 channels)
 
-* **Time-Domain**: MAV, RMS, WL, ZC, SSC, VAR, IEMG, WAMP, Log Detector
-* **Hjorth Parameters**: Mobility, Complexity
-* **Spectral Features**: Mean frequency, median frequency, entropy, band powers
-* **AR Coefficients**: AR(1), AR(2)
-* **Other**: Peak-to-peak ratio
+- **Time-Domain**: MAV, RMS, WL, ZC, SSC, VAR, IEMG, WAMP, Log Detector
+- **Hjorth Parameters**: Mobility, Complexity
+- **Spectral Features**: Mean frequency, median frequency, entropy, band powers
+- **AR Coefficients**: AR(1), AR(2)
+- **Other**: Peak-to-peak ratio
 
-### Preprocessing
+## Preprocessing
 
-1. Bandpass filtering (20–450 Hz)
-2. Powerline noise removal (50/60 Hz notch)
-3. Robust normalization
-
----
+- Bandpass filtering (20–450 Hz)
+- Powerline noise removal (50/60 Hz notch)
+- Robust normalization
 
 ## Training Details
 
-* **Data Augmentation**: noise injection, scaling, temporal shifting, mixup
-* **Class Balancing**: weighted sampling, focal loss
-* **Optimizer**: AdamW
-* **Scheduler**: Cosine annealing with warmup
-* **Regularization**: gradient clipping, early stopping
-
----
+- **Data Augmentation**: noise injection, scaling, temporal shifting, mixup
+- **Class Balancing**: weighted sampling, focal loss
+- **Optimizer**: AdamW
+- **Scheduler**: Cosine annealing with warmup
+- **Regularization**: gradient clipping, early stopping
 
 ## Dataset Information
 
-* **Subjects**: 25
-* **Sessions**: 3 per subject
-* **Gestures**: 5 classes
-* **Trials**: 7 per gesture per session
-* **Total Samples**: 2,625
-* **Sampling Rate**: 1000 Hz
-* **Channels**: 8 EMG electrodes
-
----
+- **Subjects**: 25
+- **Sessions**: 3 per subject
+- **Gestures**: 5 classes
+- **Trials**: 7 per gesture per session
+- **Total Samples**: 2,625
+- **Sampling Rate**: 1000 Hz
+- **Channels**: 8 EMG electrodes
 
 ## Results Visualization
 
 The provided visualization includes:
-
-* Confusion matrices
-* Per-class performance across folds
-* Mean ± standard deviation accuracy
-
----
+- Confusion matrices
+- Per-class performance across folds
+- Mean ± standard deviation accuracy
 
 ## Hardware Requirements
 
-* **Training**: GPU recommended
-* **Inference**: CPU sufficient
-* **RAM**: ≥ 8 GB
-* **Storage**: ~100 MB
-
----
+- **Training**: GPU recommended
+- **Inference**: CPU sufficient
+- **RAM**: ≥ 8 GB
+- **Storage**: ~100 MB
 
 ## Dependencies
 
 Key libraries include:
-
-* PyTorch
-* NumPy
-* SciPy
-* scikit-learn
-* pandas
-* matplotlib
-* seaborn
+- PyTorch
+- NumPy
+- SciPy
+- scikit-learn
+- pandas
+- matplotlib
+- seaborn
 
 See `requirements.txt` for the complete list.
-
----
 
 ## Citation
 
 If you use this work, please cite:
 
-```
+```bibtex
 @misc{semg_hybrid_2026,
   title={Hybrid Deep Learning for sEMG-Based Hand Gesture Classification},
   author={Duggimpudi Shreyas Reddy and Rajat Gupta and Sudhakar S. Dalwayi},
@@ -221,9 +195,6 @@ If you use this work, please cite:
 }
 ```
 
----
-
 ## License
 
 This project is released for academic and research use.
-
