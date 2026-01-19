@@ -1,5 +1,5 @@
 
-# sEMG Gesture Classification
+# Hybrid Deep Learning for sEMG-Based Hand Gesture Classification
 
 ---
 
